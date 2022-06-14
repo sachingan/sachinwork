@@ -1,0 +1,24 @@
+# bands={"name":"pink floyd","genre":"psycadelic rock","year":"1980","members":4}
+#
+# print(bands["name"])
+# print(bands["genre"])
+#
+# studet_details={"name":"sachin","date_of_birth":"06/11/1996","classs":"10","div":"A"}
+#
+# print(studet_details["name"])
+#
+# print("blood_group" in studet_details)
+#
+# studet_details["blood_group"]="O+ve"
+# print(studet_details)
+#
+# #to update
+#
+# studet_details["classs"]="engineering"
+# print(studet_details)
+
+acount={"name":"sachin","acount_type":"sb","netbanking":"no","age":"25","balance":10000000}
+print("Acount holder name:",(acount["name"]))
+print("Net balance:",(acount["balance"]))
+acount["balance"]+=10000000
+print("new balance",(acount["balance"]))

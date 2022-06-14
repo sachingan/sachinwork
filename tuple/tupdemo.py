@@ -5,4 +5,7 @@ print(expenses)    #list can be edited Tuple cannot be edited
 #OBJECT         DEFINE      TYPEOFDATA      INSERIONORDER   LENGTH      MUTABLE     DUPLICATES
 
 #list         [],list()        hetero          preserved      dynamic      yes         allowed
+
 #tuple        (),tuple()       hetero          preserved      dynamic       no          allowed
+
+#set            set()         hetero         not preserved    dynamic      yes           no
