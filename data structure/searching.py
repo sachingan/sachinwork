@@ -26,8 +26,8 @@
 #EFFICIENT WAY
 
 arr=[1,2,3,5,6,7,8]
-element=6
-arr.sort()                      #we need to sort before doing this method
+element=8
+arr.sort()                      #sorting is important
 low=0
 upp=len(arr)-1
 flag=0
