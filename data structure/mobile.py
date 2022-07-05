@@ -7,7 +7,7 @@ mobiles=[
     [1004,"samsungA72","4G","AMOLED",27000,"samsung",1],
     [1005,"samsungA53","4G","AMOLED",27000,"samsung",34],
     [1006,"samsungm52","4G","AMOLED",27000,"samsung",7],
-    [1007,"samsungm53","4G","AMOLED",27000,"samsung",89],
+    [1007,"samsungm53","4G","AMOLAD",27000,"samsung",89],
     [1008,"samsungA22","4G","AMOLED",27000,"samsung",0],
     [1009,"iphone13","4G","AMOLED",97000,"apple",0],
     [1010,"oneplusnordce2","4G","AMOLED",23000,"oneplus",67]
@@ -15,66 +15,72 @@ mobiles=[
 
 #q1 total no of out_of_stock mobiles
 
-out_of_stock=[oos for oos in mobiles if oos[6]==0]
-print(out_of_stock)
-print(len(out_of_stock))
+out_of_stock=[mob for mob in mobiles if mob[-1]==0]
+# print(out_of_stock)
 
 
 #q2 total stock
-
-# tot_stock = [mob[-1] for mob in mobiles]
-# print(tot_stock)
-# print(sum(tot_stock))
+total_stock=[mob[-1] for mob in mobiles]
+# print(sum(total_stock))
 
 #q3 print mobiles avl within price range 20k-30k
+mob_range=[mob for mob in mobiles if mob[4]>=20000 and mob[4]<=30000]
+# print(mob_range)
 
-# avl_range=[mob for mob in mobiles if mob[4]>=20000 and mob[4]<=30000]
-# print(avl_range)
-# #OR
-# avl_range=[mob for mob in mobiles if mob[4] in range(20000,30000)]
-# print(avl_range)
+mob_range=[mob for mob in mobiles if mob[4] in range(20000,30001)]
+# print(mob_range)
+
 
 #q4 print all 5g phones
-
-# four_g_phones=[mob for mob in mobiles if mob[2]=="5G"]
-# print(four_g_phones)
+fiveg_phones=[mob for mob in mobiles if mob[2]=="5G"]
+# print(fiveg_phones)
 
 #q5 print samsung mobiles
 
-# samsung=[mob for mob in mobiles if mob[-2]=="samsung"]
+samsung=[mob[1] for mob in mobiles if mob[-2]=="samsung"]
 # print(samsung)
 
 #q6 print low cost mobiles
-
-# lowest_price=min([mob[4] for mob in mobiles])
-# min_pro=[mob for mob in mobiles if mob[4]==lowest_price]
-# print(min_pro)
-# #OR
-low_cost=min(mobiles,key=lambda mob:mob[4])
-print(low_cost)
-
-
+low_cost=min([mob[4] for mob in mobiles])
+lc=[mob for mob in mobiles if mob[4]==low_cost]
+# print(lc)
 #q7 count of mobiles having display amoled
 amoled_count=[mob for mob in mobiles if mob[3]=="AMOLED"]
-print(len(amoled_count))
+# print(len(amoled_count))
+
+
 
 #q8 print all mobiles having stock >10
+stock_gt_ten=[mob for mob in mobiles if mob[-1]>50]
+# print(stock_gt_ten)
 
-high_stock=[mob for mob in mobiles if mob[-1]>50]
-print(high_stock)
 
 #9 print costly mobile
-# mobiles.sort(reverse=True,key=lambda mob:mob[4])
-# print(mobiles[0])
+costly_mob=[mob[4] for mob in mobiles]
+costly_mob.sort()
+cost_mob=[mob for mob in mobiles if mob[4]==costly_mob[-1]]
+# print(cost_mob)
 
-costly_pro=max(mobiles,key=lambda mob:mob[4])
-print(costly_pro)
+
 
 #10 print count of mobiles in desc price order
+desc_price=[mob[4] for mob in mobiles]
+# print(sorted(desc_price,reverse=True))
 
 #q11 sort mobiles based on avl stock of desc order
+# print(sorted([mob[-1] for mob in mobiles],reverse=True))
 
 #q12 is there any mobiles available at 10000
+flag=0
+for mob in mobiles:
+    if mob[4]==32000:
+        flag=1
+        break
+if flag==0:
+    print("NOT available")
+else:
+    print(" available")
+
 
 #q13 list all mobiles having same price
 
